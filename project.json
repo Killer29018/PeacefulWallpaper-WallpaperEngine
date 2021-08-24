@@ -1,0 +1,308 @@
+{
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"climate" : 
+			{
+				"condition" : "data.value && weatherdata.value",
+				"index" : 20,
+				"order" : 120,
+				"text" : "Enable Climate",
+				"type" : "bool",
+				"value" : true
+			},
+			"climate1" : 
+			{
+				"condition" : "data.value",
+				"order" : 119,
+				"text" : "<br><h3>Climate<h3>"
+			},
+			"climatetitle" : 
+			{
+				"condition" : "data.value && climate.value && weatherdata.value",
+				"index" : 21,
+				"order" : 121,
+				"text" : "Climate Title",
+				"type" : "bool",
+				"value" : true
+			},
+			"clock" : 
+			{
+				"condition" : "data.value==true",
+				"index" : 15,
+				"order" : 115,
+				"text" : "Clock",
+				"type" : "bool",
+				"value" : true
+			},
+			"data" : 
+			{
+				"index" : 11,
+				"order" : 111,
+				"text" : "Enable Data",
+				"type" : "bool",
+				"value" : true
+			},
+			"date" : 
+			{
+				"condition" : "data.value==true && clock.value==true",
+				"index" : 16,
+				"order" : 116,
+				"text" : "Date",
+				"type" : "bool",
+				"value" : true
+			},
+			"enablespotify" : 
+			{
+				"index" : 6,
+				"order" : 106,
+				"text" : "Enable Spotify",
+				"type" : "bool",
+				"value" : true
+			},
+			"generaldata" : 
+			{
+				"order" : 110,
+				"text" : "<br><h3>General Data<h3>"
+			},
+			"houroffset" : 
+			{
+				"fraction" : false,
+				"index" : 1,
+				"max" : 12,
+				"min" : -12,
+				"order" : 101,
+				"text" : "Background Hour Offset",
+				"type" : "slider",
+				"value" : 0
+			},
+			"humidity" : 
+			{
+				"condition" : "climate.value && data.value && weatherdata.value",
+				"index" : 23,
+				"order" : 123,
+				"text" : "Humidity",
+				"type" : "bool",
+				"value" : true
+			},
+			"minuteoffset" : 
+			{
+				"fraction" : false,
+				"index" : 2,
+				"max" : 4,
+				"min" : -4,
+				"order" : 102,
+				"text" : "Background Minute Offset",
+				"type" : "slider",
+				"value" : 0
+			},
+			"pausebackground" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "Pause Background",
+				"type" : "bool",
+				"value" : false
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"showimagetime" : 
+			{
+				"condition" : "",
+				"index" : 3,
+				"order" : 103,
+				"text" : "Show Image Time",
+				"type" : "bool",
+				"value" : false
+			},
+			"spotify" : 
+			{
+				"order" : 105,
+				"text" : "<br><h3>Spotify<h3>"
+			},
+			"spotifycode" : 
+			{
+				"condition" : "enablespotify.value",
+				"index" : 9,
+				"order" : 109,
+				"text" : "Spotify code",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"spotifyxoffset" : 
+			{
+				"condition" : "enablespotify.value",
+				"fraction" : false,
+				"index" : 7,
+				"max" : 100,
+				"min" : 0,
+				"order" : 107,
+				"text" : "X Offset",
+				"type" : "slider",
+				"value" : 20
+			},
+			"spotifyyoffset" : 
+			{
+				"condition" : "enablespotify.value",
+				"fraction" : false,
+				"index" : 8,
+				"max" : 100,
+				"min" : 0,
+				"order" : 108,
+				"text" : "Y Offset",
+				"type" : "slider",
+				"value" : 20
+			},
+			"temperature" : 
+			{
+				"condition" : "climate.value && data.value && weatherdata.value",
+				"index" : 22,
+				"order" : 122,
+				"text" : "Temperature",
+				"type" : "bool",
+				"value" : true
+			},
+			"textcolour" : 
+			{
+				"condition" : "",
+				"index" : 12,
+				"order" : 112,
+				"text" : "Text Colour",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"timeoffset" : 
+			{
+				"order" : 100,
+				"text" : "<br><h3>Time Offset<h3>"
+			},
+			"weather" : 
+			{
+				"condition" : "data.value && weatherdata.value",
+				"index" : 30,
+				"order" : 130,
+				"text" : "Enable Current Weather",
+				"type" : "bool",
+				"value" : true
+			},
+			"weather1" : 
+			{
+				"condition" : "data.value",
+				"order" : 129,
+				"text" : "<br><h3>Weather<h3>"
+			},
+			"weatherapikey" : 
+			{
+				"condition" : "data.value && weatherdata.value",
+				"index" : 18,
+				"order" : 118,
+				"text" : "Weather API Key",
+				"type" : "textinput",
+				"value" : ""
+			},
+			"weatherdata" : 
+			{
+				"condition" : "data.value",
+				"index" : 17,
+				"order" : 117,
+				"text" : "General Weather Data",
+				"type" : "bool",
+				"value" : true
+			},
+			"weatherdescription" : 
+			{
+				"condition" : "data.value && weather.value && weatherdata.value",
+				"index" : 32,
+				"order" : 132,
+				"text" : "Current Weather Description",
+				"type" : "bool",
+				"value" : true
+			},
+			"weathericon" : 
+			{
+				"condition" : "data.value && weather.value && weatherdata.value",
+				"index" : 31,
+				"order" : 131,
+				"text" : "Current Weather Icon",
+				"type" : "bool",
+				"value" : true
+			},
+			"wind" : 
+			{
+				"condition" : "data.value && weatherdata.value",
+				"index" : 26,
+				"order" : 126,
+				"text" : "Wind Title",
+				"type" : "bool",
+				"value" : true
+			},
+			"wind1" : 
+			{
+				"condition" : "data.value",
+				"order" : 124,
+				"text" : "<br><h3>Wind<h3>"
+			},
+			"winddirection" : 
+			{
+				"condition" : "data.value && wind.value && weatherdata.value",
+				"index" : 28,
+				"order" : 128,
+				"text" : "Wind Direction",
+				"type" : "bool",
+				"value" : true
+			},
+			"windspeed" : 
+			{
+				"condition" : "data.value && wind.value && weatherdata.value",
+				"index" : 27,
+				"order" : 127,
+				"text" : "Wind Speed",
+				"type" : "bool",
+				"value" : true
+			},
+			"windtitle" : 
+			{
+				"condition" : "data.value && wind.value && weatherdata.value",
+				"index" : 25,
+				"order" : 125,
+				"text" : "Enable Wind",
+				"type" : "bool",
+				"value" : true
+			},
+			"xoffset" : 
+			{
+				"condition" : "data.value",
+				"fraction" : false,
+				"index" : 13,
+				"max" : 100,
+				"min" : 0,
+				"order" : 113,
+				"text" : "X Offset",
+				"type" : "slider",
+				"value" : 20
+			},
+			"yoffset" : 
+			{
+				"condition" : "data.value",
+				"fraction" : false,
+				"index" : 14,
+				"max" : 100,
+				"min" : 0,
+				"order" : 114,
+				"text" : "Y Offset",
+				"type" : "slider",
+				"value" : 50
+			}
+		}
+	},
+	"title" : "Custom Wallpaper",
+	"type" : "web",
+	"version" : 0
+}

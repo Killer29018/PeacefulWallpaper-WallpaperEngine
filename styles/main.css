@@ -1,0 +1,233 @@
+.pauseAnimation *, .pauseAnimation *:before, .pauseAnimation *:after
+{
+    animation-play-state: paused;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:black;
+
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+#Background img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+#SpotifyData {
+    color:white;
+    font-size:35px;
+    position:relative;
+    float:left;
+    text-align:left;
+    display:flex;
+    z-index:10;
+    opacity: 0;
+
+    padding-top:20px;
+    padding-left:20px;
+}
+
+#SpotifyData.active {
+    opacity: 1;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromLeft;
+}
+
+#SpotifyData.inactive {
+    opacity: 0;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideOutLeft;
+
+    /* display:none; */
+}
+
+#Spotify_Song_Icon {
+    vertical-align:middle;
+    display:inline-block;
+    border-radius: 20%;
+    box-shadow: white 0 0 15px;
+    width:100px;
+    height:100px;
+}
+
+#Spotify_Data_Text {
+    vertical-align:middle;
+    display:inline-block;
+    padding-left:15px;
+    padding-top:10px;
+}
+
+#Spotify_Song_Name {
+    display:block;
+}
+
+#Spotify_Artist_Name {
+    display:block;
+}
+
+#Data {
+    color:white;
+    font-size: 35px;
+    padding-right: 20px;
+    padding-top: 20px;
+    position:relative;
+    text-align: right;
+    z-index: 10;
+    display:inline;
+    float:right;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromRight;
+}
+
+#WeatherData {
+    display:inline-block;
+}
+
+#ImageTime {
+    display:block;
+}
+
+#particles-js {
+    width:100%;
+    height:100%;
+    position: absolute;
+    z-index: 5;
+}
+
+/* CLOCK */
+
+#Clock {
+    font-size: 50px;
+}
+
+/* CLIMATE */
+
+#Climate {
+    padding-top: 20px;
+    margin: 0;
+    display: block;
+}
+
+#Climate div {
+    width: auto;
+}
+
+#Climate_Title {
+    display: block;
+    width: auto;
+} 
+
+#Temperature {
+    display: inline;
+    padding-right: 10px;
+}
+
+#Humidity {
+    display: inline;
+}
+
+/* WIND */
+
+#Wind {
+    padding-top: 20px;
+    position:relative;
+    margin:0;
+    display:block;
+    text-align: right;
+}
+
+#Wind div {
+    width: auto'
+}
+
+#Wind_Title {
+    display: block;
+}
+
+#Wind_Speed {
+    display: inline;
+    padding-right: 10px;
+}
+
+#Wind_Dir {
+    display: inline;
+}
+
+/* WEATHER */
+
+#Weather {
+    position: relative;
+    margin: 0;
+    height: auto;
+    text-align: right;
+    vertical-align: middle;
+}
+
+#Weather_Icon {
+    z-index: 10;
+    width:70px;
+    height:70px;
+    vertical-align: middle;
+    visibility: visible;
+    position:relative;
+    padding-right:0px;
+}
+
+#Weather_Description {
+    text-transform:capitalize;
+    vertical-align: middle;
+    position:relative;
+    text-align: right;
+    display:inline;
+}
