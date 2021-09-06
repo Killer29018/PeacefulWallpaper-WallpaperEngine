@@ -43,8 +43,31 @@ let offsetedMinute = 0;
 var pauseBackground = false;
 var weatherData = true;
 
+function getQuoteOfDay() {
+    var url = "https://quotes.rest/qod?category=inspire";
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+            var response = xhttp.responseText;
+            var json = JSON.parse(response);
+
+            var quote = json["contents"]["quotes"][0]["quote"];
+            var author = json["contents"]["quotes"][0]["author"];
+
+            console.log(quote);
+            console.log(author);
+
+    }};
+
+    xhttp.open("GET", url);
+    xhttp.setRequestHeader("accept", "application/json");
+    xhttp.send();
+}
+
 function start()
 {
+    getQuoteOfDay();
     document.getElementById("Data").classList.add("pauseAnimation");
     window.addEventListener("load", startAnimation);
     document.getElementById("SpotifyData").addEventListener("animationend", updateSongData);
