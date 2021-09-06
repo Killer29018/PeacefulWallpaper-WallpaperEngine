@@ -44,19 +44,52 @@ var pauseBackground = false;
 var weatherData = true;
 
 function getQuoteOfDay() {
-    var url = "https://quotes.rest/qod?category=inspire";
+    const options = ["life", "funny", "inspire", "students"];
+    var url = "https://quotes.rest/qod?category=";
+    var random = Math.floor(Math.random() * options.length);
+    url += options[random];
+
+    console.log(url);
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
+            if (this.status != 200)
+            {
+                document.getElementById("QuoteOfTheDay").setAttribute("class", "inactive");
+                return;
+            }
+
             var response = xhttp.responseText;
             var json = JSON.parse(response);
+            console.log(response);
+
+            document.getElementById("QuoteOfTheDay").setAttribute("class", "active");
 
             var quote = json["contents"]["quotes"][0]["quote"];
             var author = json["contents"]["quotes"][0]["author"];
+            var length = json["contents"]["quotes"][0]["length"];
 
-            console.log(quote);
-            console.log(author);
+            const limit = 80;
+
+            if (length > limit)
+            {
+                var interations = Math.floor(length / limit);
+                console.log(interations);
+
+                for (var i = 1; i <= interations; i++)
+                {
+                    var pos = quote.lastIndexOf(" ", i * limit);
+                    quote = quote.slice(0, pos) + "<BR>" + quote.slice(pos + 1);
+                }
+            }
+
+            document.getElementById("QuoteOfTheDay_Quote").innerHTML = quote;
+            document.getElementById("QuoteOfTheDay_Author").innerHTML = author;
+
+            console.log(json);
+            // console.log(quote);
+            // console.log(author);
 
     }};
 

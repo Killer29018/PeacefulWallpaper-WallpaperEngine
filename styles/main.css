@@ -45,6 +45,28 @@ body {
     }
 }
 
+@keyframes slideInFromTopQuotes {
+    0% {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutTopQuotes {
+    100% {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
 #Background img {
     position: absolute;
     width: 100%;
@@ -110,6 +132,63 @@ body {
 
 #Spotify_Artist_Name {
     display:block;
+}
+
+/* Quote of the day */
+#QuoteOfTheDay {
+    color:white;
+    font-size:25px;
+    position:absolute;
+    float:left;
+    text-align:center;
+    display:block;
+    z-index: 10;
+    opacity: 1;
+
+    padding-top:10px;
+    transform: translateX(-50%);
+
+    left:50%;
+
+
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromTopQuotes;
+}
+
+#QuoteOfTheDay.active {
+    opacity: 1;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromTopQuotes;
+}
+
+#QuoteOfTheDay.inactive {
+    opacity: 0;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInTopQuotes;
+}
+
+#QuoteOfTheDay_Quote {
+    display:block;
+    padding-left:15px;
+    padding-top:10px;
+    white-space:pre-wrap;
+}
+
+#QuoteOfTheDay_Author {
+    display:block;
+    padding-left:15px;
+    padding-top:10px;
 }
 
 #Data {
