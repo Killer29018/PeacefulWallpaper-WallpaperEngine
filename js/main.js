@@ -44,12 +44,10 @@ var pauseBackground = false;
 var weatherData = true;
 
 function getQuoteOfDay() {
-    const options = ["life", "funny", "inspire", "students"];
+    const options = ["inspire", "students"];
     var url = "https://quotes.rest/qod?category=";
     var random = Math.floor(Math.random() * options.length);
     url += options[random];
-
-    console.log(url);
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -70,7 +68,7 @@ function getQuoteOfDay() {
             var author = json["contents"]["quotes"][0]["author"];
             var length = json["contents"]["quotes"][0]["length"];
 
-            const limit = 80;
+            const limit = 70;
 
             if (length > limit)
             {
