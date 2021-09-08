@@ -16,6 +16,7 @@
 			"climate1" : 
 			{
 				"condition" : "data.value",
+				"index" : 19,
 				"order" : 119,
 				"text" : "<br><h3>Climate<h3>"
 			},
@@ -54,6 +55,14 @@
 				"type" : "bool",
 				"value" : true
 			},
+			"enablequote" : 
+			{
+				"index" : 34,
+				"order" : 134,
+				"text" : "Enable Quote Of The Day",
+				"type" : "bool",
+				"value" : true
+			},
 			"enablespotify" : 
 			{
 				"index" : 6,
@@ -64,6 +73,7 @@
 			},
 			"generaldata" : 
 			{
+				"index" : 10,
 				"order" : 110,
 				"text" : "<br><h3>General Data<h3>"
 			},
@@ -106,6 +116,12 @@
 				"type" : "bool",
 				"value" : false
 			},
+			"quoteoftheday" : 
+			{
+				"index" : 33,
+				"order" : 133,
+				"text" : "<br><h3>Quote Of The Day<h3>"
+			},
 			"schemecolor" : 
 			{
 				"order" : 0,
@@ -124,6 +140,7 @@
 			},
 			"spotify" : 
 			{
+				"index" : 5,
 				"order" : 105,
 				"text" : "<br><h3>Spotify<h3>"
 			},
@@ -180,6 +197,7 @@
 			},
 			"timeoffset" : 
 			{
+				"index" : 0,
 				"order" : 100,
 				"text" : "<br><h3>Time Offset<h3>"
 			},
@@ -195,6 +213,7 @@
 			"weather1" : 
 			{
 				"condition" : "data.value",
+				"index" : 29,
 				"order" : 129,
 				"text" : "<br><h3>Weather<h3>"
 			},
@@ -246,6 +265,7 @@
 			"wind1" : 
 			{
 				"condition" : "data.value",
+				"index" : 24,
 				"order" : 124,
 				"text" : "<br><h3>Wind<h3>"
 			},

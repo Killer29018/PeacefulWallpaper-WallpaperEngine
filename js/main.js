@@ -68,7 +68,7 @@ function getQuoteOfDay() {
             var author = json["contents"]["quotes"][0]["author"];
             var length = json["contents"]["quotes"][0]["length"];
 
-            const limit = 70;
+            const limit = 60;
 
             if (length > limit)
             {
@@ -610,6 +610,15 @@ window.wallpaperPropertyListener = {
                 document.getElementById("Weather_Description").style.display = "inline";
             else
                 document.getElementById("Weather_Description").style.display = "none";
+        }
+
+        if (properties.enablequote)
+        {
+            let enabled = properties.enablequote.value;
+            if (enabled)
+                document.getElementById("QuoteOfTheDay").style.display = "block";
+            else
+                document.getElementById("QuoteOfTheDay").style.display = "none";
         }
     }
 }
