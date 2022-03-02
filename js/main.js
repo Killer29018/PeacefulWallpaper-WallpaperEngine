@@ -26,6 +26,7 @@ var today;
 var dataEnabled = true;
 var clockEnabled = true;
 var dateEnabled = true;
+var imageTime = false;
 
 var textColour;
 
@@ -197,7 +198,8 @@ function updateIndex()
 
     index = ((currentHour * 4) + Math.floor(currentMinute / 15)) % images.length;
 
-    updateImageTime();
+    if (imageTime)
+        updateImageTime();
 }
 
 async function updateWeather()
@@ -397,6 +399,7 @@ window.wallpaperPropertyListener = {
 
         if (properties.showimagetime)
         {
+            imageTime = properties.showimagetime.value;
             if (properties.showimagetime.value)
                 document.getElementById("ImageTime").style.display = "block";
             else
