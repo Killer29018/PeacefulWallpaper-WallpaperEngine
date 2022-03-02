@@ -322,7 +322,8 @@
 			}
 		}
 	},
-	"title" : "Custom Wallpaper",
+    "preview": "preview.jpg",
+	"title" : "Peaceful Wallpaper",
 	"type" : "web",
 	"version" : 0
 }
