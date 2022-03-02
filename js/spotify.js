@@ -4,9 +4,6 @@ const SPOTIFY_REDIRECT_URL = "http://localhost";
 
 const SPOTIFY_CURRENTLY_PLAYING = "https://api.spotify.com/v1/me/player/currently-playing";
 
-var clientID = "808c95a2fb844ddfa12fbecba54cc6b2";
-var clientSecret = "0495cbe69f114242bc742c8e1a1fbb4b";
-
 var accessToken = "";
 var refreshToken = "";
 
@@ -19,12 +16,11 @@ var currentSongIconSrc = "";
 
 var spotifyEnabled = true;
 
-var code = "AQCasdz3Z4__VQpD5GmpPG0ZOx8aiWXG8MWeGX2fJ1WOjKKoPUB3RDBD8rnNIzki6Vu5nScDJPKse9s3mD9JiXfSta0T5Iq8MGQzq9gewY6kcgkB1_TCXP8ASLX9xxk1PpgeZwVVeY3Ng88l9Olo6rKcJsq3ZgHVQ2ff_yhxtU2-Nb4r_IVdLJIWeGjAPagujQ";
 
 function outputCodeURL()
 {
     let url = SPOTIFY_AUTHORISE_URL;
-    url += "?client_id=" + clientID;
+    url += "?client_id=" + SpotifyClientID;
     url += "&response_type=code";
     url += "&redirect_uri=" + encodeURI(SPOTIFY_REDIRECT_URL);
     url += "&show_dialog=true";
@@ -44,10 +40,10 @@ function loadTokens()
 function fetchAccessToken()
 {
     let body = "grant_type=authorization_code";
-    body += "&code=" + code;
+    body += "&code=" + SpotifyCode;
     body += "&redirect_uri=" + encodeURI(SPOTIFY_REDIRECT_URL);
-    body += "&client_id=" + clientID;
-    body += "&client_secret=" + clientSecret;
+    body += "&client_id=" + SpotifyClientID;
+    body += "&client_secret=" + SpotifyClientSecret;
     callAuthorisationAPI(body);
 }
 
@@ -56,7 +52,7 @@ function callAuthorisationAPI(body)
     let xhr = new XMLHttpRequest();
     xhr.open("POST", SPOTIFY_TOKEN_URL, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('Authorization', 'Basic ' + btoa(clientID + ":" + clientSecret));
+    xhr.setRequestHeader('Authorization', 'Basic ' + btoa(SpotifyClientID + ":" + SpotifyClientSecret));
     xhr.send(body);
     xhr.onload = handleAuthorizationResponse;
 }
@@ -186,6 +182,6 @@ function refreshAccessToken()
     refreshToken = localStorage.getItem("refreshToken");
     let body = "grant_type=refresh_token";
     body += "&refresh_token=" + refreshToken;
-    body += "&clientID=" + clientID;
+    body += "&clientID=" + SpotifyClientID;
     callAuthorisationAPI(body);
 }

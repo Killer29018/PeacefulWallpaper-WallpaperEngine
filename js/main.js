@@ -2,7 +2,6 @@ var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const BASE_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?q=reading&units=metric&appid=";
-var weatherKey = "2e722aa1af28b3c2cfc86dda4b549017";
 
 var weatherUrl = BASE_WEATHER_URL + weatherKey;
 
@@ -44,6 +43,9 @@ var pauseBackground = false;
 var weatherData = true;
 
 function getQuoteOfDay() {
+    if (!quoteOfDay)
+        return;
+
     const options = ["inspire", "students"];
     var url = "https://quotes.rest/qod?category=";
     var random = Math.floor(Math.random() * options.length);
