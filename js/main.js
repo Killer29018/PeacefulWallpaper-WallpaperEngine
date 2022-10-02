@@ -152,7 +152,7 @@ function startTime()
 
     let date = today.getDate();
     let day = days[today.getDay()];
-    let month = months[today.getMonth() - 1];
+    let month = months[today.getMonth()];
 
     let formatMinute = formatTime(minute);
     let formatSecond = formatTime(seconds);
